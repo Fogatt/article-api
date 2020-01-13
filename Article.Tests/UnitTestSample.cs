@@ -1,15 +1,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Article.Domain.StoreContext.Entities;
-using Article.Domain.StoreContext.ValueObjects;
 
 namespace Article.Tests
 {
-    
+
     // Working with: The Red/Green/Refactor cycle.
     // * Create a unit tests that fails
     // * Write production code that makes that test pass.
     // * Clean up the mess you just made. (refatory)
-    
+
     //[TestClass]
     public class UnitTestSample
     {
@@ -25,12 +23,12 @@ namespace Article.Tests
         public void ShouldReturnNotificationWhenCarIsNotValid()
         {
             var vehicle = "motorcicle";
-            var isCar =  vehicle == "car" ? true : false;
+            var isCar = vehicle == "car" ? true : false;
             Assert.IsFalse(isCar);
         }
 
-         // * Third -> Clean up the mess you just made.
-         // That means, delete the method Sample1 or Write some good stuff in there (refatory)
+        // * Third -> Clean up the mess you just made.
+        // That means, delete the method Sample1 or Write some good stuff in there (refatory)
 
 
         // Again, many people have written about this cycle. Indeed the idea derives from Kent Beck’s original injunction:
@@ -42,24 +40,24 @@ namespace Article.Tests
         //[TestMethod]
         public void TestMethod1()
         {
-            
+
             //customer's needs
-            var name = new Name("Lucas", "Marinho");
-            var document = new Document("12344567890");
-            var email = new Email("lucasmarinho@email.com");
+            // var name = new Name("Lucas", "Marinho");
+            // var document = new Document("12344567890");
+            // var email = new Email("lucasmarinho@email.com");
 
-            var customer = new Customer(name,document,email,"73837337");
+            // var customer = new Customer(name,document,email,"73837337");
 
-            //Products that someone will buy
-            var mouse = new Product("Mouse", "Item of the computer department", "image.png", 59.90M, 10);
-            var keyboard = new Product("Keyboard", "Item of the computer department", "image.png", 89.90M, 10);
-            var printer = new Product("Printer", "Item of the computer department", "image.png", 459.90M, 10);
-            var memoryCardSlot = new Product("Memory Card Slot", "Item of the computer department", "image.png", 259.90M, 10);
-            var HdSata = new Product("HD SATA", "Item of the computer department", "image.png", 599.90M, 10);
-            var ComputerScreen = new Product("Computer Screen", "Item of the computer department", "image.png", 359.90M, 10);
-            var MotherBoard = new Product("Mother Board", "Item of the computer department", "image.png", 959.90M, 10);
+            // //Products that someone will buy
+            // var mouse = new Product("Mouse", "Item of the computer department", "image.png", 59.90M, 10);
+            // var keyboard = new Product("Keyboard", "Item of the computer department", "image.png", 89.90M, 10);
+            // var printer = new Product("Printer", "Item of the computer department", "image.png", 459.90M, 10);
+            // var memoryCardSlot = new Product("Memory Card Slot", "Item of the computer department", "image.png", 259.90M, 10);
+            // var HdSata = new Product("HD SATA", "Item of the computer department", "image.png", 599.90M, 10);
+            // var ComputerScreen = new Product("Computer Screen", "Item of the computer department", "image.png", 359.90M, 10);
+            // var MotherBoard = new Product("Mother Board", "Item of the computer department", "image.png", 959.90M, 10);
 
-            var order = new Order(customer);
+            // var order = new Order(customer);
 
             // order.AddItem(new OrderItem(mouse,2));
             // order.AddItem(new OrderItem(keyboard,2));
@@ -70,19 +68,19 @@ namespace Article.Tests
             // order.AddItem(new OrderItem(MotherBoard,2));
 
             //create an order
-            order.Place();
+            // order.Place();
 
-            //Check if the order is valid
-            var valid = order.Valid;
+            // //Check if the order is valid
+            // var valid = order.Valid;
 
-            //payment (simulate)
-            order.Pay();
+            // //payment (simulate)
+            // order.Pay();
 
-            //shipping (simulate)
-            order.Ship();
+            // //shipping (simulate)
+            // order.Ship();
 
-            //cancel (simulate)
-            order.Cancel();
+            // //cancel (simulate)
+            // order.Cancel();
 
         }
     }
