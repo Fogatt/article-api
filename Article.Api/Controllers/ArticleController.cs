@@ -8,6 +8,7 @@ using Article.Domain.StoreContext.Repositories;
 using Article.Shared.Commands;
 using Article.Domain.StoreContext.Commands.ArticleCommands.Inputs;
 using Article.Domain.StoreContext.Queries;
+using Microsoft.AspNetCore.Cors;
 
 namespace Article.Api.Controllers
 {
@@ -21,6 +22,7 @@ namespace Article.Api.Controllers
             _handler = handler;
         }
 
+        [EnableCors("SiteCorsPolicy")]
         [HttpGet] //select
         [Route("v1/articles")]
         public IEnumerable<ArticleQueryResult> Get()
@@ -28,6 +30,7 @@ namespace Article.Api.Controllers
             return _repository.Get();
         }
 
+        [EnableCors("SiteCorsPolicy")]
         [HttpGet]
         [Route("v1/articles/{id}")]
         public ArticleQueryResult GetById(Guid id)
@@ -35,6 +38,7 @@ namespace Article.Api.Controllers
             return _repository.Get(id);
         }
 
+        [EnableCors("SiteCorsPolicy")]
         [HttpPost] //insert
         [Route("v1/articles")]
         public ICommandResult Post([FromBody]CreateCommand command)
