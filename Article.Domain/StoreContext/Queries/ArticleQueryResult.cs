@@ -4,9 +4,7 @@ namespace Article.Domain.StoreContext.Queries
 {
     public class ArticleQueryResult
     {
-        public Guid Id { get; set; }
         public string Title { get; set; }
-        public DateTime CreateDate { get; set; }
         public DateTime PublishedData { get; set; }
         public string Site { get; set; }
         public string AdGroup { get; set; }
