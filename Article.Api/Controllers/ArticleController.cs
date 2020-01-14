@@ -41,7 +41,7 @@ namespace Article.Api.Controllers
         [EnableCors("SiteCorsPolicy")]
         [HttpPost] //insert
         [Route("v1/articles")]
-        public ICommandResult Post([FromBody]CreateCommand command)
+        public ICommandResult Post([FromForm]CreateCommand command)
         {
             var result = (CommandResult)_handler.Handle(command);
             return result;
